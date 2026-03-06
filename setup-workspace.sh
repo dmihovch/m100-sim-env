@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 set -e
 
-echo "Building Workspace Structure..."
+echo "Building Workspace File Structure"
 mkdir -p workspace/src
 cd workspace/src
 
-echo "Cloning DJI Repositories..."
+echo "Cloning DJI Repos"
 git clone https://github.com/dji-m100-ros/dji_m100_gazebo.git || true
 git clone https://github.com/dji-m100-ros/dji_m100_description.git || true
 git clone https://github.com/dji-m100-ros/dji_m100_controllers_gazebo.git || true
 git clone https://github.com/dji-sdk/Onboard-SDK-ROS.git || true
 
-echo "Cloning Physics Engines (Hector & RotorS)..."
+echo "Cloning Physics Engines (Hector & RotorS)"
 git clone -b noetic-devel https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor.git || true
 git clone https://github.com/tu-darmstadt-ros-pkg/hector_localization.git || true
 git clone https://github.com/tu-darmstadt-ros-pkg/hector_models.git || true
@@ -19,12 +19,12 @@ git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo.git || true
 git clone https://github.com/ethz-asl/rotors_simulator.git || true
 git clone https://github.com/ethz-asl/mav_comm.git || true
 
-echo "Applying XML Fixes..."
+echo "Applying XML Fixes"
 
 # fixing the dogshit (kidding!) code that these idiots (again, kidding!) wrote before me
 sed -i 's/<revolute_gimbal_joint/<xacro:revolute_gimbal_joint/g' dji_m100_description/urdf/gimbal.urdf.xacro
 
-echo "Injecting swarm.launch..."
+echo "Creating swarm.launch..."
 cat << 'EOF' > dji_m100_gazebo/launch/swarm.launch
 <?xml version="1.0"?>
 <launch>
@@ -47,4 +47,4 @@ cat << 'EOF' > dji_m100_gazebo/launch/swarm.launch
 </launch>
 EOF
 
-echo "Setup Complete. You are ready to build."
+echo "Complete!"
