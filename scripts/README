@@ -1,0 +1,2 @@
+These scripts are designed to be run from the parent directory.
+ie, to run setup-workspace.sh, you should run it from the m100-sim-env directory and run ./scripts/setup-workspace.sh

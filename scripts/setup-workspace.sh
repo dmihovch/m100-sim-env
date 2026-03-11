@@ -3,7 +3,14 @@ set -e
 
 echo "Building Workspace File Structure"
 mkdir -p workspace/src
+
+
+
 cd workspace/src
+
+
+echo "Cloning Core Swarm Engine"
+git clone https://github.com/dmihovch/flie_swarm_core.git || true
 
 echo "Cloning DJI Repos"
 git clone https://github.com/dji-m100-ros/dji_m100_gazebo.git || true
@@ -18,6 +25,7 @@ git clone https://github.com/tu-darmstadt-ros-pkg/hector_models.git || true
 git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo.git || true
 git clone https://github.com/ethz-asl/rotors_simulator.git || true
 git clone https://github.com/ethz-asl/mav_comm.git || true
+
 
 echo "Applying XML Fixes"
 
