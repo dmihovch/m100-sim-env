@@ -10,21 +10,21 @@ cd workspace/src
 
 
 echo "Cloning Core Swarm Engine"
-git clone https://github.com/dmihovch/flie_swarm_core.git || true
+git clone https://github.com/dmihovch/flie_swarm_core.git
 
 echo "Cloning DJI Repos"
-git clone https://github.com/dji-m100-ros/dji_m100_gazebo.git || true
-git clone https://github.com/dji-m100-ros/dji_m100_description.git || true
-git clone https://github.com/dji-m100-ros/dji_m100_controllers_gazebo.git || true
-git clone https://github.com/dji-sdk/Onboard-SDK-ROS.git || true
+git clone https://github.com/dji-m100-ros/dji_m100_gazebo.git
+git clone https://github.com/dji-m100-ros/dji_m100_description.git
+git clone https://github.com/dji-m100-ros/dji_m100_controllers_gazebo.git
+git clone https://github.com/dji-sdk/Onboard-SDK-ROS.git
 
 echo "Cloning Physics Engines (Hector & RotorS)"
-git clone -b noetic-devel https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor.git || true
-git clone https://github.com/tu-darmstadt-ros-pkg/hector_localization.git || true
-git clone https://github.com/tu-darmstadt-ros-pkg/hector_models.git || true
-git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo.git || true
-git clone https://github.com/ethz-asl/rotors_simulator.git || true
-git clone https://github.com/ethz-asl/mav_comm.git || true
+git clone -b noetic-devel https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor.git
+git clone https://github.com/tu-darmstadt-ros-pkg/hector_localization.git
+git clone https://github.com/tu-darmstadt-ros-pkg/hector_models.git 
+git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo.git 
+git clone https://github.com/ethz-asl/rotors_simulator.git 
+git clone https://github.com/ethz-asl/mav_comm.git 
 
 
 echo "Applying XML Fixes"
