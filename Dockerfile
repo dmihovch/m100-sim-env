@@ -23,4 +23,12 @@ RUN git clone https://github.com/dji-sdk/Onboard-SDK.git /tmp/Onboard-SDK && \
     rm -rf /tmp/Onboard-SDK
 
 WORKDIR /workspace
-RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc
+COPY workspace/src /workspace/src
+
+RUN sed -i 's/<revolute_gimbal_joint/<xacro:revolute_gimbal_joint/g' /workspace/src/dji_m100_description/urdf/gimbal.urdf.xacro
+
+COPY config/swarm.launch /workspace/src/dji_m100_gazebo/launch/swarm.launch
+
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make"
+
+RUN echo "source /workspace/devel/setup.bash" >> /root/.bashrc

@@ -1,0 +1,34 @@
+[submodule "workspace/src/flie_swarm_core"]
+	path = workspace/src/flie_swarm_core
+	url = https://github.com/dmihovch/flie_swarm_core.git
+[submodule "workspace/src/dji_m100_gazebo"]
+	path = workspace/src/dji_m100_gazebo
+	url = https://github.com/dji-m100-ros/dji_m100_gazebo.git
+[submodule "workspace/src/dji_m100_description"]
+	path = workspace/src/dji_m100_description
+	url = https://github.com/dji-m100-ros/dji_m100_description.git
+[submodule "workspace/src/dji_m100_controllers_gazebo"]
+	path = workspace/src/dji_m100_controllers_gazebo
+	url = https://github.com/dji-m100-ros/dji_m100_controllers_gazebo.git
+[submodule "workspace/src/Onboard-SDK-ROS"]
+	path = workspace/src/Onboard-SDK-ROS
+	url = https://github.com/dji-sdk/Onboard-SDK-ROS.git
+[submodule "workspace/src/hector_quadrotor"]
+	path = workspace/src/hector_quadrotor
+	url = https://github.com/tu-darmstadt-ros-pkg/hector_quadrotor.git
+	branch = noetic-devel
+[submodule "workspace/src/hector_localization"]
+	path = workspace/src/hector_localization
+	url = https://github.com/tu-darmstadt-ros-pkg/hector_localization.git
+[submodule "workspace/src/hector_models"]
+	path = workspace/src/hector_models
+	url = https://github.com/tu-darmstadt-ros-pkg/hector_models.git
+[submodule "workspace/src/hector_gazebo"]
+	path = workspace/src/hector_gazebo
+	url = https://github.com/tu-darmstadt-ros-pkg/hector_gazebo.git
+[submodule "workspace/src/rotors_simulator"]
+	path = workspace/src/rotors_simulator
+	url = https://github.com/ethz-asl/rotors_simulator.git
+[submodule "workspace/src/mav_comm"]
+	path = workspace/src/mav_comm
+	url = https://github.com/ethz-asl/mav_comm.git
