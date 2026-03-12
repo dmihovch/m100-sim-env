@@ -9,8 +9,8 @@ mkdir -p workspace/src
 cd workspace/src
 
 
-echo "Cloning Core Swarm Engine"
-git clone https://github.com/dmihovch/flie_swarm_core.git
+#echo "Cloning Core Swarm Engine"
+#git clone https://github.com/dmihovch/flie_swarm_core.git
 
 echo "Cloning DJI Repos"
 git clone https://github.com/dji-m100-ros/dji_m100_gazebo.git
@@ -44,12 +44,12 @@ cat << 'EOF' > dji_m100_gazebo/launch/swarm.launch
     <arg name="debug" value="false"/>
   </include>
 
-  <group ns="uav1">
-    <param name="robot_description" command="$(find xacro)/xacro '$(find dji_m100_description)/urdf/dji_m100.urdf.xacro' robot_namespace:=uav1" />
-    <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0 -y 0 -z 0.5 -model uav1" respawn="false" output="screen" />
+  <group ns="swarm_member_1">
+    <param name="robot_description" command="$(find xacro)/xacro '$(find dji_m100_description)/urdf/dji_m100.urdf.xacro' robot_namespace:=swarm_member_1" />
+    <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -x 0 -y 0 -z 0.5 -model swarm_member_1" respawn="false" output="screen" />
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
       <param name="publish_frequency" type="double" value="50.0" />
-      <param name="tf_prefix" value="uav1" /> 
+      <param name="tf_prefix" value="swarm_member_1" /> 
     </node>
   </group>
 </launch>
