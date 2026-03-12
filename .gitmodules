@@ -1,6 +1,6 @@
 [submodule "workspace/src/flie_swarm_core"]
 	path = workspace/src/flie_swarm_core
-	url = https://github.com/dmihovch/flie_swarm_core.git
+	url = git@github.com:dmihovch/flie_swarm_core.git
 [submodule "workspace/src/dji_m100_gazebo"]
 	path = workspace/src/dji_m100_gazebo
 	url = https://github.com/dji-m100-ros/dji_m100_gazebo.git

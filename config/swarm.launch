@@ -14,6 +14,7 @@
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
       <param name="publish_frequency" type="double" value="50.0" />
       <param name="tf_prefix" value="swarm_member_1" /> 
+	  <param name="robot_description" command="$(find xacro)/xacro '$(find m100_sim_env)/urdf/m100_sim.xacro' robot_namespace:=swarm_member_1" />
     </node>
   </group>
 </launch>

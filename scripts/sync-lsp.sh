@@ -16,22 +16,18 @@ docker cp matrice_dev:/opt/ros/noetic/include ~/.local/share/ros/noetic/
 
 echo "Extracting build artifacts"
 docker cp matrice_dev:/workspace/build/compile_commands.json ./workspace/src/flie_swarm_core/
-docker cp matrice_dev:/workspace/devel ./workspace/ 
+docker cp matrice_dev:/workspace/devel ./workspace/
 
 echo "Patching absolute paths for host resolution..."
 
-HOST_REPO_PATH=$(realpath ../flie_swarm_core)
+HOST_REPO_PATH=$(realpath ./workspace/src/flie_swarm_core)
 HOST_WORKSPACE_PATH=$(realpath ./workspace)
 HOST_ROS_PATH="$HOME/.local/share/ros/noetic"
 
-# Move execution context to the standalone repo
-cd ../flie_swarm_core
+cd workspace/src/flie_swarm_core
 
-# Update system headers
 sed -i "s|/opt/ros/noetic|$HOST_ROS_PATH|g" compile_commands.json
-# Update direct repository includes to point to your standalone repo
 sed -i "s|/workspace/src/flie_swarm_core|$HOST_REPO_PATH|g" compile_commands.json
-# Update generated headers (like messages/services in the devel space)
 sed -i "s|/workspace|$HOST_WORKSPACE_PATH|g" compile_commands.json
 
 echo "LSP synchronization complete."
