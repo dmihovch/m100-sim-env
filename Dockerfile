@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
     ros-noetic-controller-interface \
     ros-noetic-octomap-msgs \
     ros-noetic-octomap-ros \
+	ros-noetic-ros-control \
+	ros-noetic-ros-controllers \
     libgoogle-glog-dev \
     libyaml-cpp-dev \
     git cmake build-essential \
