@@ -15,7 +15,15 @@ RUN apt-get update && apt-get install -y \
     libgoogle-glog-dev \
     libyaml-cpp-dev \
     git cmake build-essential \
+	clangd \
     && rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y ninja-build gettext cmake unzip curl nodejs npm build-essential git
+RUN git clone https://github.com/neovim/neovim.git /tmp/neovim && \
+    cd /tmp/neovim && \
+    make CMAKE_BUILD_TYPE=Release && \
+    make install && \
+    rm -rf /tmp/neovim
 
 RUN git clone https://github.com/dji-sdk/Onboard-SDK.git /tmp/Onboard-SDK && \
     mkdir -p /tmp/Onboard-SDK/build && \

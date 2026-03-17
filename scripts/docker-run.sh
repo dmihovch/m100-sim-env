@@ -10,7 +10,10 @@ sudo docker run -it --privileged \
   --env="DISPLAY=$DISPLAY" \
   --env="QT_X11_NO_MITSHM=1" \
   --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-  --volume="$(pwd)/workspace/src/flie_swarm_core:/workspace/src/flie_swarm_core:rw" \
+  --volume="$PWD":"$PWD":rw \
+  --volume="$HOME/.config/nvim:/root/.config/nvim:ro" \
+  --volume="$HOME/.local/share/nvim:/root/.local/share/nvim:rw" \
+  --workdir="$PWD" \
   --network host \
   m100_ros1_env \
   bash
