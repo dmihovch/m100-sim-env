@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update && apt-get install -y ninja-build gettext cmake unzip curl nodejs npm build-essential git
-RUN git clone https://github.com/neovim/neovim.git /tmp/neovim && \
+RUN git clone -b stable https://github.com/neovim/neovim.git /tmp/neovim && \
     cd /tmp/neovim && \
     make CMAKE_BUILD_TYPE=Release && \
     make install && \
