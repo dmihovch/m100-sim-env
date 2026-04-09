@@ -16,14 +16,15 @@ RUN apt-get update && apt-get install -y \
     libyaml-cpp-dev \
     git cmake build-essential \
 	clangd \
+    software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
+RUN add-apt-repository ppa:maveonair/helix-editor && \
+    apt-get update && \
+    apt-get install -y helix
+
+
 RUN apt-get update && apt-get install -y ninja-build gettext cmake unzip curl nodejs npm build-essential git
-RUN git clone -b stable https://github.com/neovim/neovim.git /tmp/neovim && \
-    cd /tmp/neovim && \
-    make CMAKE_BUILD_TYPE=Release && \
-    make install && \
-    rm -rf /tmp/neovim
 
 RUN git clone https://github.com/dji-sdk/Onboard-SDK.git /tmp/Onboard-SDK && \
     mkdir -p /tmp/Onboard-SDK/build && \
