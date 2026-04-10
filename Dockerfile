@@ -43,6 +43,4 @@ RUN sed -i '/<plugin name=.hitl_controller./,/<\/plugin>/d' /workspace/src/dji_m
 
 COPY config/swarm.launch /workspace/src/dji_m100_gazebo/launch/swarm.launch
 
-RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make"
-
-RUN echo "source /workspace/devel/setup.bash" >> /root/.bashrc
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash"
