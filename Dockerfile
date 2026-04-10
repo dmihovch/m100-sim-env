@@ -19,10 +19,13 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     && rm -rf /var/lib/apt/lists/*
 
-RUN add-apt-repository ppa:maveonair/helix-editor && \
-    apt-get update && \
-    apt-get install -y helix
+RUN apt-get update && apt-get install -y curl xz-utils && \
+    curl -L https://github.com/helix-editor/helix/releases/download/23.10/helix-23.10-x86_64-linux.tar.xz | tar -xJ -C /tmp && \
+    mv /tmp/helix-23.10-x86_64-linux/hx /usr/local/bin/ && \
+    mv /tmp/helix-23.10-x86_64-linux/runtime /usr/local/lib/helix-runtime && \
+    rm -rf /tmp/helix-23.10-x86_64-linux
 
+ENV HELIX_RUNTIME=/usr/local/lib/helix-runtime
 
 RUN apt-get update && apt-get install -y ninja-build gettext cmake unzip curl nodejs npm build-essential git
 
