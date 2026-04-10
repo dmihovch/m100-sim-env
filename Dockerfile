@@ -23,8 +23,7 @@ RUN apt-get update && apt-get install -y curl gnupg2 && \
     curl -fsSL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x27642B9FD7F1A161FC2524E3355A4FA515D7C855" | apt-key add - && \
     echo "deb http://ppa.launchpadcontent.net/maveonair/helix-editor/ubuntu focal main" > /etc/apt/sources.list.d/maveonair-helix.list && \
     apt-get update && \
-    apt-get install -y helix \
-    rm -rf /tmp/helix-23.10-x86_64-linux
+    apt-get install -y helix
 
 RUN apt-get update && apt-get install -y ninja-build gettext cmake unzip curl nodejs npm build-essential git
 
