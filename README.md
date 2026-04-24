@@ -1,14 +1,15 @@
-#Gazebo Classic Simulator w/ ROS1 integration
+# Gazebo Classic Simulator w/ ROS1 integration
 
-##Dependencies
-###Hardware
+## Dependencies
+### Hardware
 - GPU (possibly only NVIDIA)
-###Software
+### Software
 - Linux environment
 - Docker
-- 
 
-##Setup
+
+## Setup
+
 
 Execute these commands on your local machine
 ```bash
@@ -27,6 +28,7 @@ Once you have been dropped into the docker container, run these
 ```
 swarm_size can be any number, I have personally tested up to 20. I put no sanitation in the script, so if you put something like -1 in that is on you! Current valid formations are "flying_v", "helix", "carousel"
 
-##Development
+## Development
 The container is pulling down with the helix editor, so you can edit right from inside the container! Updates you make outside the container are not immediately reflected inside the container, but edits made inside are immediately reflected outside.
+
 To update the commit pointer for `flie_swarm_core` in `m100-sim-env`, run `./scripts/update-core.sh`
