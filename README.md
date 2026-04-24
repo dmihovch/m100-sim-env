@@ -2,7 +2,7 @@
 
 ## Dependencies
 ### Hardware
-- GPU (possibly only NVIDIA)
+- NVIDIA GPU
 ### Software
 - Linux environment
 - Docker
