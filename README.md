@@ -1,4 +1,4 @@
-# Gazebo Classic Simulator w/ ROS1 integration
+# Containerized Gazebo Classic Simulator w/ ROS1 & DJI OSDK integration
 
 ## Dependencies
 ### Hardware
